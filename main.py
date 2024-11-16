@@ -11,6 +11,9 @@ img = Image.open("image.jpg")
 # Adjusts the image to be vertical
 img = ImageOps.exif_transpose(img)
 
+original_size = os.path.getsize("image.jpg")
+
+print(f"Original image size: {original_size / (1024 * 1024):.2f} MB")
 
 while quality > 10:
     img.save("image_temp.jpg", quality=quality, optimize=True)
